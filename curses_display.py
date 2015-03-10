@@ -51,7 +51,6 @@ def main(stdscr):
 
         if c == ord('r') or c == ord('R'):
             quote_text.clear()
-            quote_text.addstr("adsjfka  hoaqieiewqASDJFKAJFKDSAJ", curses.color_pair(2))
             quote_text.addstr("Getting quote...", curses.color_pair(3))
             quote_text.refresh()
             quote_text.clear()
