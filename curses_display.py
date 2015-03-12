@@ -2,11 +2,13 @@
 from quotes import pull_quotes, get_new_quote
 import curses, traceback
 
+# Function to set up a screen with general default settings.
 def setup():
     stdscr = curses.initscr()
     curses.noecho()
     curses.cbreak()
     curses.curs_set(0)
+
     if curses.has_colors():
         curses.start_color()
         init_colours()
@@ -33,7 +35,7 @@ def main(stdscr):
     stdscr.chgat(-1, curses.A_REVERSE)
     stdscr.addstr(curses.LINES-1, 0, "Press 'R' to request a new quote, 'Q' to quit")
     stdscr.chgat(curses.LINES-1,7, 1, curses.A_BOLD | curses.color_pair(2))
-    stdscr.chgat(curses.LINES-1,35, 1, curses.A_BOLD | curses.color_pair(1))
+    stdscr.chgat(curses.LINES-1,70, 1, curses.A_BOLD | curses.color_pair(1))
 
     quote_window = curses.newwin(curses.LINES-2, curses.COLS, 1, 0)
     quote_text = quote_window.subwin(curses.LINES-6,curses.COLS-4, 3,2)
